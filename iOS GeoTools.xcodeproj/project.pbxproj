@@ -27,6 +27,7 @@
 		D3D0D6C3173A11020007F55B /* GTBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D0D6C2173A11020007F55B /* GTBoundingBox.m */; };
 		D3D0D6C4173A11020007F55B /* GTBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D0D6C2173A11020007F55B /* GTBoundingBox.m */; };
 		D3D0D6C6173A11460007F55B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D0D6C5173A11450007F55B /* CoreLocation.framework */; };
+		D3D0D6CD173A19210007F55B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D0D6CC173A19200007F55B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D3D0D6C1173A11020007F55B /* GTBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTBoundingBox.h; path = Classes/GTBoundingBox.h; sourceTree = "<group>"; };
 		D3D0D6C2173A11020007F55B /* GTBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTBoundingBox.m; path = Classes/GTBoundingBox.m; sourceTree = "<group>"; };
 		D3D0D6C5173A11450007F55B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D3D0D6CC173A19200007F55B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D0D6CD173A19210007F55B /* MapKit.framework in Frameworks */,
 				D3D0D6C6173A11460007F55B /* CoreLocation.framework in Frameworks */,
 				D3D0D683173A10520007F55B /* UIKit.framework in Frameworks */,
 				D3D0D685173A10520007F55B /* Foundation.framework in Frameworks */,
@@ -116,6 +119,7 @@
 		D3D0D681173A10520007F55B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3D0D6CC173A19200007F55B /* MapKit.framework */,
 				D3D0D6C5173A11450007F55B /* CoreLocation.framework */,
 				D3D0D682173A10520007F55B /* UIKit.framework */,
 				D3D0D684173A10520007F55B /* Foundation.framework */,

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface GTBoundingBox : NSObject {
     
@@ -30,6 +31,9 @@
 - (int)numberOfCoordinates;
 
 // the center of the bounding box
-- (CLLocationCoordinate2D)center;
+- (CLLocationCoordinate2D)centerCoordinate;
+
+// can be used to zoom a MKMapView to this bounding box
+- (MKCoordinateRegion)coordinateRegion;
 
 @end

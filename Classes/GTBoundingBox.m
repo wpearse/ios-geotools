@@ -52,7 +52,7 @@
     return mCoordinateCount;
 }
 
-- (CLLocationCoordinate2D)center {
+- (CLLocationCoordinate2D)centerCoordinate {
 
     NSAssert(mCoordinateCount > 0, @"Need at least one coordinate to calculate the center of this bounding box.");
     
@@ -60,6 +60,20 @@
     CLLocationDegrees longitude = (mCoordinateNorthWest.longitude + mCoordinateSouthEast.longitude) / 2;
     
     return CLLocationCoordinate2DMake(latitude, longitude);
+}
+
+- (MKCoordinateRegion)coordinateRegion {
+    
+    NSAssert(mCoordinateCount > 1, @"Need at least two coordinates to calculate the region of this bounding box.");
+    
+    CLLocationDegrees latitudeDelta = mCoordinateNorthWest.latitude - mCoordinateSouthEast.latitude;
+    CLLocationDegrees longitudeDelta = mCoordinateNorthWest.longitude - mCoordinateSouthEast.longitude;
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(latitudeDelta, longitudeDelta);
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake([self centerCoordinate], span);
+    
+    return region;
 }
 
 @end
