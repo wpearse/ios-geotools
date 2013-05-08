@@ -28,6 +28,7 @@
 		D3D0D6CD173A19210007F55B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D0D6CC173A19200007F55B /* MapKit.framework */; };
 		D3D0D6D0173AFB9E0007F55B /* GTBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D0D6CF173AFB9E0007F55B /* GTBoundingBox.m */; };
 		D3D0D6D1173AFB9E0007F55B /* GTBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D0D6CF173AFB9E0007F55B /* GTBoundingBox.m */; };
+		D3D0D6D3173B01730007F55B /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D3D0D6D2173B01730007F55B /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		D3D0D6CC173A19200007F55B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D3D0D6CE173AFB9E0007F55B /* GTBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTBoundingBox.h; sourceTree = "<group>"; };
 		D3D0D6CF173AFB9E0007F55B /* GTBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTBoundingBox.m; sourceTree = "<group>"; };
+		D3D0D6D2173B01730007F55B /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D3D0D676173A10520007F55B = {
 			isa = PBXGroup;
 			children = (
+				D3D0D6D2173B01730007F55B /* readme.md */,
 				D3D0D6C0173A10CE0007F55B /* GeoTools */,
 				D3D0D688173A10520007F55B /* iOS GeoTools */,
 				D3D0D6AF173A10520007F55B /* iOS GeoToolsTests */,
@@ -264,6 +267,7 @@
 				D3D0D699173A10520007F55B /* Default-568h@2x.png in Resources */,
 				D3D0D69F173A10520007F55B /* WPViewController_iPhone.xib in Resources */,
 				D3D0D6A2173A10520007F55B /* WPViewController_iPad.xib in Resources */,
+				D3D0D6D3173B01730007F55B /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
