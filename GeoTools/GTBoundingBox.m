@@ -76,4 +76,17 @@
     return region;
 }
 
+- (BOOL) containsCoordinate:(CLLocationCoordinate2D)coordinate {
+    
+    NSAssert(mCoordinateCount > 1, @"Need at least two coordinates to hit-test in this bounding box.");
+    
+    BOOL withinLatitudeBounds = coordinate.latitude <= mCoordinateNorthWest.latitude
+                             && coordinate.latitude >= mCoordinateSouthEast.latitude;
+    
+    BOOL withinLongitudeBounds = coordinate.longitude <= mCoordinateNorthWest.longitude
+                              && coordinate.longitude >= mCoordinateSouthEast.longitude;
+    
+    return withinLatitudeBounds && withinLongitudeBounds;
+}
+
 @end

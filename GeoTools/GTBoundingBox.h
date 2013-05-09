@@ -36,4 +36,7 @@
 // can be used to zoom a MKMapView to this bounding box
 - (MKCoordinateRegion)coordinateRegion;
 
+// hit-test inside this bounding box
+- (BOOL) containsCoordinate:(CLLocationCoordinate2D)coordinate;
+
 @end
