@@ -8,12 +8,18 @@
 
 #import "GTBoundingBox.h"
 
+#define GTClamp(x, low, high)  (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
+
 @implementation GTBoundingBox
 
 - (id)init {
     
     if (self = [super init]) {
+        
         [self reset];
+        
+        mMinimumWidthDegrees = GTBoundingBoxDefaultMinimumWidth;
+        
     }
     return self;
 }
@@ -23,6 +29,7 @@
     mCoordinateCount = 0;
     mCoordinateNorthWest = CLLocationCoordinate2DMake(-90, -180);
     mCoordinateSouthEast = CLLocationCoordinate2DMake(90, 180);
+
 }
 
 - (void)expandToIncludeCoordinate:(CLLocationCoordinate2D)coordinate {
@@ -64,16 +71,31 @@
 
 - (MKCoordinateRegion)coordinateRegion {
     
-    NSAssert(mCoordinateCount > 1, @"Need at least two coordinates to calculate the region of this bounding box.");
+    return [self coordinateRegionWithPadding:0];
+}
+
+- (MKCoordinateRegion)coordinateRegionWithPadding:(CLLocationDegrees)paddingDegrees {
+    
+    NSAssert(mCoordinateCount > 0, @"Need at least one coordinate to calculate the region of this bounding box.");
     
     CLLocationDegrees latitudeDelta = mCoordinateNorthWest.latitude - mCoordinateSouthEast.latitude;
     CLLocationDegrees longitudeDelta = mCoordinateNorthWest.longitude - mCoordinateSouthEast.longitude;
+    
+    latitudeDelta = GTClamp(latitudeDelta, mMinimumWidthDegrees, latitudeDelta) + (paddingDegrees * 2);
+    longitudeDelta = GTClamp(longitudeDelta, mMinimumWidthDegrees, longitudeDelta) + (paddingDegrees * 2);
     
     MKCoordinateSpan span = MKCoordinateSpanMake(latitudeDelta, longitudeDelta);
     
     MKCoordinateRegion region = MKCoordinateRegionMake([self centerCoordinate], span);
     
     return region;
+}
+
+- (void) setMinimumWidth:(CLLocationDegrees)minimumWidth {
+
+    NSAssert(minimumWidth >= 0, @"Minimum width must be a positive value");
+    
+    mMinimumWidthDegrees = minimumWidth;
 }
 
 - (BOOL) containsCoordinate:(CLLocationCoordinate2D)coordinate {
